@@ -15,9 +15,10 @@ import jp.ac.meijou.android.s251205047.databinding.ActivityMainBinding;
 public class MainActivity3 extends AppCompatActivity {
     private ActivityMain3Binding binding;
     private  String display_r = "";
-    private int result = 0;
-    private  int calNum = 0;
-    private  int count = -1;
+    private double result = 0;
+    private String cal = "";
+    private  boolean bitFlag = true;
+    private  boolean noError = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,71 +33,258 @@ public class MainActivity3 extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        result = 0;
-        binding.textViewResult.setText(display_r + result);
 
-        //ac
+
+        result = 0;
+        binding.textViewResult.setText(display_r + (int)result);
+
+        //acボタン
         binding.buttonAc.setOnClickListener(view -> {
             result = 0;
-            calNum = 0;
+            cal = "";
             display_r = "";
-            binding.textViewResult.setText(display_r + result);
+            binding.textViewResult.setText(display_r + (int)result);
+            binding.textViewCal.setText(cal);
+            binding.textViewCalNum.setText("");
+            bitFlag = true;
+            noError = true;
         });
 
         //数字ボタン
         binding.button0.setOnClickListener(view ->{
-            if(display_r != ""){//先頭桁の時は何もさせない
-                count++;
-                calNum = (int)Math.pow(10, count) * 0;
+            if(!noError) {
+                binding.buttonAc.callOnClick();
+            }
+            if(bitFlag){//先頭桁の時は何もさせない
+                binding.textViewResult.setText("0");
+            }else{
                 display_r += 0;
                 binding.textViewResult.setText(display_r);
             }
         });
+
         binding.button1.setOnClickListener(view ->{
-            calNum = (int)Math.pow(10, count) * 1;
-            display_r += 1;
-            binding.textViewResult.setText(display_r);
+            if(!noError) {
+                binding.buttonAc.callOnClick();
+            }
+            if(bitFlag) {
+                display_r = "1";
+                binding.textViewResult.setText(display_r);
+                bitFlag = false;
+            }else{
+                display_r += 1;
+                binding.textViewResult.setText(display_r);
+            }
         });
+
         binding.button2.setOnClickListener(view ->{
-            calNum = (int)Math.pow(10, count) * 2;
-            display_r += 2;
-            binding.textViewResult.setText(display_r);
+            if(!noError) {
+                binding.buttonAc.callOnClick();
+            }
+            if(bitFlag) {
+                display_r = "2";
+                binding.textViewResult.setText(display_r);
+                bitFlag = false;
+            }else{
+                display_r += 2;
+                binding.textViewResult.setText(display_r);
+            }
         });
+
         binding.button3.setOnClickListener(view ->{
-            calNum = (int)Math.pow(10, count) * 3;
-            display_r += 3;
-            binding.textViewResult.setText(display_r);
+            if(!noError) {
+                binding.buttonAc.callOnClick();
+            }
+            if(bitFlag) {
+                display_r = "3";
+                binding.textViewResult.setText(display_r);
+                bitFlag = false;
+            }else{
+                display_r += 3;
+                binding.textViewResult.setText(display_r);
+            }
         });
+
         binding.button4.setOnClickListener(view ->{
-            calNum = (int)Math.pow(10, count) * 4;
-            display_r += 4;
-            binding.textViewResult.setText(display_r);
+            if(!noError) {
+                binding.buttonAc.callOnClick();
+            }
+            if(bitFlag) {
+                display_r = "4";
+                binding.textViewResult.setText(display_r);
+                bitFlag = false;
+            }else{
+                display_r += 4;
+                binding.textViewResult.setText(display_r);
+            }
         });
+
         binding.button5.setOnClickListener(view ->{
-            calNum = (int)Math.pow(10, count) * 5;
-            display_r += 5;
-            binding.textViewResult.setText(display_r);
+            if(!noError) {
+                binding.buttonAc.callOnClick();
+            }
+            if(bitFlag) {
+                display_r = "5";
+                binding.textViewResult.setText(display_r);
+                bitFlag = false;
+            }else{
+                display_r += 5;
+                binding.textViewResult.setText(display_r);
+            }
         });
+
         binding.button6.setOnClickListener(view ->{
-            calNum = (int)Math.pow(10, count) * 6;
-            display_r += 6;
-            binding.textViewResult.setText(display_r);
+            if(!noError) {
+                binding.buttonAc.callOnClick();
+            }
+            if(bitFlag) {
+                display_r = "6";
+                binding.textViewResult.setText(display_r);
+                bitFlag = false;
+            }else{
+                display_r += 6;
+                binding.textViewResult.setText(display_r);
+            }
         });
+
         binding.button7.setOnClickListener(view ->{
-            calNum = (int)Math.pow(10, count) * 7;
-            display_r += 7;
-            binding.textViewResult.setText(display_r);
+            if(!noError) {
+                binding.buttonAc.callOnClick();
+            }
+            if(bitFlag) {
+                display_r = "7";
+                binding.textViewResult.setText(display_r);
+                bitFlag = false;
+            }else{
+                display_r += 7;
+                binding.textViewResult.setText(display_r);
+            }
         });
+
         binding.button8.setOnClickListener(view ->{
-            calNum = (int)Math.pow(10, count) * 8;
-            display_r += 8;
-            binding.textViewResult.setText(display_r);
+            if(!noError) {
+                binding.buttonAc.callOnClick();
+            }
+            if(bitFlag) {
+                display_r = "8";
+                binding.textViewResult.setText(display_r);
+                bitFlag = false;
+            }else{
+                display_r += 8;
+                binding.textViewResult.setText(display_r);
+            }
         });
+
         binding.button9.setOnClickListener(view ->{
-            calNum = (int)Math.pow(10, count) * 9;
-            display_r += 9;
-            binding.textViewResult.setText(display_r);
+            if(!noError) {
+                binding.buttonAc.callOnClick();
+            }
+            if(bitFlag) {
+                display_r = "9";
+                binding.textViewResult.setText(display_r);
+                bitFlag = false;
+            }else{
+                display_r += 9;
+                binding.textViewResult.setText(display_r);
+            }
         });
+
+        //+ボタン
+        binding.buttonPlus.setOnClickListener(view -> {
+            if(noError) {
+                cal = binding.textViewCal.getText().toString();
+                switch (cal) {
+                    case "＋":
+                        result += Double.parseDouble(binding.textViewResult.getText().toString());
+                        break;
+                    case "－":
+                        result -= Double.parseDouble(binding.textViewResult.getText().toString());
+                        break;
+                    case "×":
+                        result *= Double.parseDouble(binding.textViewResult.getText().toString());
+                        break;
+                    case "÷":
+                        String s = binding.textViewResult.getText().toString();
+                        if (s == "0") {
+                            binding.textViewResult.setText("ERROR");
+                            noError = false;
+                            binding.buttonEqual.callOnClick();
+                        } else {
+                            result /= Double.parseDouble(s);
+                        }
+                        break;
+                    default:
+                        result = Double.parseDouble(binding.textViewResult.getText().toString());
+                        break;
+                }
+                binding.textViewCalNum.setText("" + result);
+                binding.textViewCal.setText("＋");
+                bitFlag = true;
+            }
+        });
+
+        //-ボタン
+        binding.buttonMinas.setOnClickListener(view -> {
+            binding.buttonPlus.callOnClick();
+            binding.textViewCal.setText("－");
+        });
+
+        //×ボタン
+        binding.buttonTimes.setOnClickListener(view -> {
+            binding.buttonPlus.callOnClick();
+            binding.textViewCal.setText("×");
+        });
+
+        //÷ボタン
+        binding.buttonDevide.setOnClickListener(view -> {
+            binding.buttonPlus.callOnClick();
+            binding.textViewCal.setText("÷");
+        });
+
+        //=ボタン
+        binding.buttonEqual.setOnClickListener(view -> {
+            if(noError) {
+                cal = binding.textViewCal.getText().toString();
+                switch (cal) {
+                    case "＋":
+                        result += Double.parseDouble(binding.textViewResult.getText().toString());
+                        break;
+                    case "－":
+                        result -= Double.parseDouble(binding.textViewResult.getText().toString());
+                        break;
+                    case "×":
+                        result *= Double.parseDouble(binding.textViewResult.getText().toString());
+                        break;
+                    case "÷":
+                        String s = binding.textViewResult.getText().toString();
+                        if(s == "0") {
+                            binding.textViewResult.setText("ERROR");
+                            noError = false;
+                            binding.buttonEqual.callOnClick();
+                        }else {
+                            result /= Double.parseDouble(s);
+                        }
+                        break;
+                    default:
+                        result = Double.parseDouble(binding.textViewResult.getText().toString());
+                        break;
+                }
+                if(noError) {
+                    binding.textViewResult.setText("" + result);
+                    binding.textViewCal.setText("");
+                    binding.textViewCalNum.setText("");
+                    result = 0;
+                    display_r = "";
+                    bitFlag = true;
+                    noError = true;
+                }else{
+                    binding.textViewCal.setText("");
+                    binding.textViewCalNum.setText("");
+                }
+            }
+        });
+
+
 
         //intentを取得
         //Intent intent = getIntent();

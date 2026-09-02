@@ -9,13 +9,39 @@
 
     <TextView
         android:id="@+id/textView_result"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="end"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:textSize="50sp"
         android:text="0"
-        android:layout_margin="50dp"/>
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="80dp"/>
+    <TextView
+        android:id="@+id/textView_cal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="40sp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/material_dynamic_neutral60"
+        android:text=""/>
+    <TextView
+        android:id="@+id/textView_calNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20sp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/material_dynamic_neutral60"
+        android:text=""/>
+
 
     <Button
         android:id="@+id/button_ac"
@@ -95,7 +121,7 @@
         app:layout_constraintEnd_toStartOf="@id/button_8"
         app:layout_constraintStart_toStartOf="parent"
         android:text="7"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="220dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="16dp"/>
     <Button
@@ -105,7 +131,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toStartOf="@id/button_9"
         android:text="8"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="220dp"
         android:layout_marginEnd="8dp" />
     <Button
         android:id="@+id/button_9"
@@ -114,7 +140,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toStartOf="@id/button_devide"
         android:text="9"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="220dp"
         android:layout_marginEnd="8dp"/>/>
     <Button
         android:id="@+id/button_equal"
@@ -158,7 +184,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="÷"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="220dp"
         android:layout_marginEnd="16dp"/>
 
     <Button
