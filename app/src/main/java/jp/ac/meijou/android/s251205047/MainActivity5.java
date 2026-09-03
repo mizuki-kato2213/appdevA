@@ -59,7 +59,7 @@ public class MainActivity5 extends AppCompatActivity {
         binding.buttonColor.setOnClickListener(view ->{
             var color = binding.color.getText().toString();
 
-            // textパラメータをつけたURLの作成
+            //パラメータをつけたURLの作成
             var url = Uri.parse("https://placehold.jp/500x500.png")
                     .buildUpon()
                     .appendQueryParameter()
